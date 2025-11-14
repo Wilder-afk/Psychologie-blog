@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artikelen - Mijn Blog</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikelen - Psychologie Blog</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-<h1>Artikelen</h1>
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="artikelen.html">Artikelen</a></li>
-<li><a href="over.html">Over mij</a></li>
-</ul>
-</nav>
-</header>
-<main id="content-wrapper">
-<div id="alle-artikelen"></div>
-<aside id="sidebar">
-<div>
-<h3>Populaire artikelen</h3>
-<div id="sidebar-populair"></div>
-</div>
-<div>
-<h3>Categorieën</h3>
-<div id="sidebar-categorie"></div>
-</div>
-</aside>
-</main>
-<footer>
-<p>&copy; 2025 Mijn Blog. Alle rechten voorbehouden.</p>
-</footer>
-<script src="script.js"></script>
+    <header>
+        <h1>Psychologie & Mindfulness Blog</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="artikelen.html">Artikelen</a>
+            <a href="over.html">Over mij</a>
+            <a href="blog.html">Schrijf mee</a>
+        </nav>
+    </header>
+
+    <main class="artikelen-pagina">
+        <aside>
+            <h2>Populaire Artikelen</h2>
+            <div id="sidebar-populair"></div>
+            <h2>Categorieën</h2>
+            <div id="sidebar-categorie"></div>
+        </aside>
+
+        <section id="alle-artikelen">
+            <!-- Artikelen worden hier geladen via script.js -->
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Psychologie Blog | Volg ons op sociale media</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,74 +1,65 @@
-/* Reset en basis */
-* {
+/* Algemene stijlen */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-body {
     background-color: #f5f5f5;
     color: #333;
-    line-height: 1.6;
 }
 
 header {
-    background-color: #e0f2f7;
+    background-color: #b2d8d8;
     padding: 20px;
     text-align: center;
 }
 
 header h1 {
-    color: #222;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
+    margin: 0;
+    font-size: 2em;
 }
 
 nav a {
+    margin: 0 15px;
     text-decoration: none;
-    color: #222;
+    color: #333;
     font-weight: bold;
-    transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #007acc;
+    color: #00796b;
 }
 
-main {
+footer {
+    background-color: #b2d8d8;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Homepage artikelen */
+.homepage-artikelen {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 20px;
+    gap: 20px;
 }
 
-/* Artikel previews */
 .artikel-preview {
-    display: flex;
     background-color: #fff;
     border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     overflow: hidden;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    cursor: pointer;
+    width: 300px;
     transition: transform 0.3s;
-    width: 90%;
-    max-width: 900px;
 }
 
 .artikel-preview:hover {
-    transform: translateY(-5px);
+    transform: scale(1.03);
 }
 
 .artikel-preview img {
-    width: 300px;
-    height: 180px;
+    width: 100%;
+    height: 200px;
     object-fit: cover;
 }
 
@@ -77,85 +68,101 @@ main {
 }
 
 .artikel-content h3 {
-    margin-bottom: 10px;
-    color: #007acc;
-}
-
-.artikel-content p {
-    margin-bottom: 10px;
+    margin-top: 0;
 }
 
 .artikel-content .categorie {
     font-size: 0.9em;
-    color: #555;
+    color: #00796b;
+    font-weight: bold;
 }
 
-/* Artikelen pagina */
-#alle-artikelen {
+.artikel-content a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #00796b;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.artikel-content a:hover {
+    background-color: #004d40;
+}
+
+/* Artikelenpagina */
+.artikelen-pagina {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.artikelen-pagina aside {
+    flex: 1;
+    max-width: 250px;
+}
+
+.artikelen-pagina section#alle-artikelen {
+    flex: 3;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    flex: 3;
+    gap: 20px;
 }
 
-#alle-artikelen img {
+.artikelen-pagina img {
     width: 100%;
-    max-height: 300px;
-    object-fit: cover;
     border-radius: 10px;
 }
 
-#content-wrapper {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-#sidebar {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#sidebar h3 {
-    color: #007acc;
-    margin-bottom: 10px;
-}
-
-.populair-artikel a {
-    display: block;
-    text-decoration: none;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.populair-artikel a:hover {
-    color: #007acc;
-}
-
-.categorie-item {
-    padding: 5px 0;
-    color: #555;
-}
-
-footer {
-    background-color: #e0f2f7;
+/* Over mij pagina */
+.over-mij {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
     text-align: center;
-    padding: 15px;
-    margin-top: 20px;
 }
 
-/* Responsiveness */
-@media(max-width: 768px) {
-    #content-wrapper {
+.over-mij img.over-foto {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Blog pagina */
+.blog-form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Sidebar */
+#sidebar-populair a, .categorie-item {
+    display: block;
+    margin: 5px 0;
+    padding: 5px;
+    color: #00796b;
+    cursor: pointer;
+}
+
+#sidebar-populair a:hover, .categorie-item:hover {
+    color: #004d40;
+    text-decoration: underline;
+}
+
+/* Responsief */
+@media (max-width: 768px) {
+    .artikelen-pagina {
         flex-direction: column;
     }
-    .artikel-preview {
+    .homepage-artikelen {
         flex-direction: column;
-    }
-    .artikel-preview img {
-        width: 100%;
-        height: 200px;
+        align-items: center;
     }
 }
+

@@ -38,13 +38,21 @@ const artikelen = [
         afbeelding: "https://images.unsplash.com/photo-1508923567004-3a6b8004f3d2?auto=format&fit=crop&w=800&q=80",
         categorie: "Mindfulness",
         views: 50
+    },
+    {
+        titel: "Dankbaarheid oefenen",
+        inhoud: "Dankbaarheid helpt je te focussen op positieve dingen in je leven. Schrijf elke dag drie dingen op waar je dankbaar voor bent.",
+        link: "artikelen.html#dankbaarheid",
+        afbeelding: "https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=800&q=80",
+        categorie: "Mindfulness",
+        views: 40
     }
 ];
 
-// Functie om artikelen op index.html te tonen
 function toonArtikelen() {
     const container = document.getElementById("artikelen-container");
     if (!container) return;
+    container.innerHTML = "";
     artikelen.forEach(artikel => {
         let div = document.createElement("div");
         div.className = "artikel-preview";
@@ -61,14 +69,13 @@ function toonArtikelen() {
     });
 }
 
-// Functie om artikelen + sidebar op artikelen.html te tonen
 function toonArtikelenPagina() {
     const alleArtikelen = document.getElementById("alle-artikelen");
     const sidebarPopulair = document.getElementById("sidebar-populair");
     const sidebarCategorie = document.getElementById("sidebar-categorie");
     if (!alleArtikelen) return;
 
-    // Artikelen
+    alleArtikelen.innerHTML = "";
     artikelen.forEach(artikel => {
         let div = document.createElement("div");
         div.innerHTML = `
@@ -80,7 +87,7 @@ function toonArtikelenPagina() {
         alleArtikelen.appendChild(div);
     });
 
-    // Populaire artikelen
+    sidebarPopulair.innerHTML = "";
     const populair = artikelen.sort((a,b) => b.views - a.views).slice(0,3);
     populair.forEach(artikel => {
         let a = document.createElement("a");
@@ -89,7 +96,7 @@ function toonArtikelenPagina() {
         sidebarPopulair.appendChild(a);
     });
 
-    // Categorieën
+    sidebarCategorie.innerHTML = "";
     const categorieën = [...new Set(artikelen.map(a => a.categorie))];
     categorieën.forEach(cat => {
         let div = document.createElement("div");
@@ -99,5 +106,6 @@ function toonArtikelenPagina() {
     });
 }
 
+// Artikelen tonen
 toonArtikelen();
 toonArtikelenPagina();
