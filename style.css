@@ -146,7 +146,7 @@ footer {
     display: block;
     margin: 5px 0;
     padding: 5px;
-    color: #00796b;
+    color: #390079;
     cursor: pointer;
 }
 
@@ -165,4 +165,5 @@ footer {
         align-items: center;
     }
 }
+
 
